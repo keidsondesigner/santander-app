@@ -4,6 +4,7 @@ import 'package:santander_app/services/user_list.dart';
 import 'package:santander_app/models/user_list_model/user_list_model.dart';
 import 'package:santander_app/shared/app_colors.dart';
 import 'package:santander_app/shared/app_images.dart';
+import 'package:santander_app/widgets/features.dart';
 
 import '../../shared/app_settings.dart';
 import '../../widgets/header.dart';
@@ -47,7 +48,8 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Column(children: [
-          HeaderWidget(user: user!,)
+          HeaderWidget(user: user!),
+          FeaturesWidget(features: user!.features!)
         ],
       ),
     );
