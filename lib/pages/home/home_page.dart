@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:santander_app/assets/services/user_list.dart';
+import 'package:santander_app/services/user_list.dart';
+import 'package:santander_app/models/user_list_model/user_list_model.dart';
 import 'package:santander_app/shared/app_colors.dart';
 import 'package:santander_app/shared/app_images.dart';
 
@@ -15,6 +16,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  UserListModel? user;
+
   @override
   void initState() {
     super.initState();
@@ -22,14 +25,15 @@ class _HomePageState extends State<HomePage> {
   }
 
   fetch() async {
-    var user = await UserListApi.fetchUser(1);
+    user = await UserListApi.fetchUser(1);
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
     AppSettings.screenWidth = MediaQuery.of(context).size.width;
     AppSettings.screenHeight = MediaQuery.of(context).size.height;
-    return Scaffold(
+    return user == null ?  const Scaffold(body: Center(child: CircularProgressIndicator( color: Colors.red,)),) : Scaffold(
       drawer: const Drawer(), //button hamburger top bar
       appBar: AppBar(
         backgroundColor: AppColors.red,
@@ -43,7 +47,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Column(children: [
-          HeaderWidget()
+          HeaderWidget(user: user!,)
         ],
       ),
     );
