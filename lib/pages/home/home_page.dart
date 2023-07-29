@@ -4,6 +4,9 @@ import 'package:santander_app/assets/services/user_list.dart';
 import 'package:santander_app/shared/app_colors.dart';
 import 'package:santander_app/shared/app_images.dart';
 
+import '../../shared/app_settings.dart';
+import '../../widgets/header.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -24,6 +27,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    AppSettings.screenWidth = MediaQuery.of(context).size.width;
+    AppSettings.screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       drawer: const Drawer(), //button hamburger top bar
       appBar: AppBar(
@@ -35,6 +40,10 @@ class _HomePageState extends State<HomePage> {
             margin: const EdgeInsets.only(right: 16), 
             child: SvgPicture.asset(AppImages.notification, height: 24)
           )
+        ],
+      ),
+      body: Column(children: [
+          HeaderWidget()
         ],
       ),
     );
