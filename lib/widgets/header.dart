@@ -19,8 +19,9 @@ class HeaderWidget extends StatelessWidget  {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Olá, ${user.name}", style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white ),
+              const Text(
+                "Olá, Keidson", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white ),
+                // "Olá, ${user.name}", style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white ),
               ),
               Text(
                 "Ag ${user.account!.agency}    Cc ${user.account!.number}", style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white ),

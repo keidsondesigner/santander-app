@@ -51,8 +51,9 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(children: [
           HeaderWidget(user: user!),
-          FeaturesWidget(features: user!.features!),
           const SizedBox(height: 20,), // Separdor de component
+          FeaturesWidget(features: user!.features!),
+          const SizedBox(height: 20,),
           CardWidget(card: user!.card!),
           const SizedBox(height: 20,),
           SlideCardsWidget(news: user!.news!)
