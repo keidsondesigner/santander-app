@@ -23,7 +23,7 @@ class HeaderWidget extends StatelessWidget  {
                 "Olá, ${user.name}", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white ),
               ),
               Text(
-                "Ag 00000 Cc 999999-9", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white ),
+                "Ag ${user.account!.agency}    Cc ${user.account!.number}", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white ),
               )
             ]
           ),
