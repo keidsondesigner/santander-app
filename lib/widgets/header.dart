@@ -9,7 +9,6 @@ class HeaderWidget extends StatelessWidget  {
   const HeaderWidget({super.key, required this.user});
 
   @override
-  @override
   Widget build(BuildContext context) {
     return         Container(
           height: AppSettings.screenHeight / 5,
