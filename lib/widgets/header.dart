@@ -20,10 +20,10 @@ class HeaderWidget extends StatelessWidget  {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Olá, ${user.name}", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white ),
+                "Olá, ${user.name}", style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white ),
               ),
               Text(
-                "Ag ${user.account!.agency}    Cc ${user.account!.number}", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white ),
+                "Ag ${user.account!.agency}    Cc ${user.account!.number}", style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white ),
               )
             ]
           ),

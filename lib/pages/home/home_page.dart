@@ -7,6 +7,7 @@ import 'package:santander_app/shared/app_images.dart';
 import 'package:santander_app/widgets/features.dart';
 
 import '../../shared/app_settings.dart';
+import '../../widgets/card.dart';
 import '../../widgets/header.dart';
 
 class HomePage extends StatefulWidget {
@@ -49,7 +50,9 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(children: [
           HeaderWidget(user: user!),
-          FeaturesWidget(features: user!.features!)
+          FeaturesWidget(features: user!.features!),
+          const SizedBox(height: 20,), // Separdor de component
+          CardWidget(card: user!.card!)
         ],
       ),
     );
