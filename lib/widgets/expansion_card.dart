@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:intl/intl.dart';
 
 import '../models/user_list_model/card.dart';
 import '../shared/app_colors.dart';
@@ -46,7 +47,7 @@ class ExpansionCardWidget extends StatelessWidget {
               children: <Widget>[
                 ListTile(
                   title: Text(
-                    "Limite atual RS${card.limit!.toStringAsFixed(2)}",
+                    "Limite atual R\$ ${NumberFormat('#,##0.00', 'pt_BR').format(card.limit!)}",
                     style: const TextStyle(
                         color: Colors.white,
                         fontSize: 16,
