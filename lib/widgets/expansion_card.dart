@@ -20,9 +20,6 @@ class ExpansionCardWidget extends StatelessWidget {
     return Container(
         padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 1),
         width: AppSettings.screenWidth - 24,
-        decoration: BoxDecoration(
-            color: AppColors.red,
-            borderRadius: const BorderRadius.all(Radius.circular(8))),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -31,7 +28,10 @@ class ExpansionCardWidget extends StatelessWidget {
               backgroundColor: AppColors.red,
               collapsedBackgroundColor: AppColors.red,
               collapsedIconColor: AppColors.red,
-              shape: Border.all(width: 0, color: Colors.transparent),
+              shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(8))),
+              collapsedShape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(8))),
               title: Text(
                 "Cartão ${card.number!}",
                 style: const TextStyle(
