@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:santander_app/pages/home/pix/pix.dart';
 import 'package:santander_app/shared/app_settings.dart';
 
 import '../models/user_list_model/feature.dart';
@@ -16,6 +17,9 @@ class FeaturesWidget extends StatefulWidget {
 class _FeaturesWidgetState extends State<FeaturesWidget> {
   Widget getFeature(String icon, String description) {
     return InkWell(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const PixPage()));
+      },
       child: Card(
         child: Container(
           decoration: const BoxDecoration(
