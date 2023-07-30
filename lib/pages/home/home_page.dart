@@ -7,6 +7,7 @@ import 'package:santander_app/shared/app_images.dart';
 import 'package:santander_app/widgets/features.dart';
 
 import '../../shared/app_settings.dart';
+import '../../widgets/balance.dart';
 import '../../widgets/expansion_card.dart';
 import '../../widgets/header.dart';
 import '../../widgets/slide_card.dart';
@@ -58,22 +59,25 @@ class _HomePageState extends State<HomePage> {
                     child: SvgPicture.asset(AppImages.notification, height: 24))
               ],
             ),
-            body: Column(
-              children: [
-                HeaderWidget(user: user!),
-                const SizedBox(
-                  height: 20,
-                ), // Separdor de component
-                FeaturesWidget(features: user!.features!),
-                const SizedBox(
-                  height: 20,
-                ),
-                ExpansionCardWidget(card: user!.card!),
-                const SizedBox(
-                  height: 20,
-                ),
-                SlideCardsWidget(news: user!.news!),
-              ],
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  HeaderWidget(user: user!),
+                  const SizedBox(
+                    height: 20,
+                  ), // Separdor de component
+                  FeaturesWidget(features: user!.features!),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ExpansionCardWidget(card: user!.card!),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  SlideCardsWidget(news: user!.news!),
+                  BalanceWidget(account: user!.account!)
+                ],
+              ),
             ),
           );
   }
