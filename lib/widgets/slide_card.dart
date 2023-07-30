@@ -86,7 +86,7 @@ class _SlideCardsWidgetState extends State<SlideCardsWidget> {
       children: [
         SizedBox(
           height: 100,
-          width: AppSettings.screenWidth,
+          width: AppSettings.screenWidth - 20,
           child: PageView(
             onPageChanged: (index) {
               setState(() {
