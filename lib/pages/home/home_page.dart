@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       HeaderWidget(user: user!),
                       const SizedBox(
-                        height: 180,
+                        height: 200,
                       ), // Separdor de component
                       FeaturesWidget(features: user!.features!),
                       const SizedBox(
