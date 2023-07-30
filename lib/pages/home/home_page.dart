@@ -7,7 +7,7 @@ import 'package:santander_app/shared/app_images.dart';
 import 'package:santander_app/widgets/features.dart';
 
 import '../../shared/app_settings.dart';
-import '../../widgets/card.dart';
+import '../../widgets/expansion_card.dart';
 import '../../widgets/header.dart';
 import '../../widgets/slide_card.dart';
 
@@ -36,29 +36,45 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     AppSettings.screenWidth = MediaQuery.of(context).size.width;
     AppSettings.screenHeight = MediaQuery.of(context).size.height;
-    return user == null ?  const Scaffold(body: Center(child: CircularProgressIndicator( color: Colors.red,)),) : Scaffold(
-      drawer: const Drawer(), //button hamburger top bar
-      appBar: AppBar(
-        backgroundColor: AppColors.red,
-        foregroundColor: Colors.white, //color white button hamburger top bar
-        title: Center(child: SvgPicture.asset(AppImages.logoSantander, height: 24, width: 24)),
-        actions: [
-          Container(
-            margin: const EdgeInsets.only(right: 16), 
-            child: SvgPicture.asset(AppImages.notification, height: 24)
+    return user == null
+        ? const Scaffold(
+            body: Center(
+                child: CircularProgressIndicator(
+              color: Colors.red,
+            )),
           )
-        ],
-      ),
-      body: Column(children: [
-          HeaderWidget(user: user!),
-          const SizedBox(height: 20,), // Separdor de component
-          FeaturesWidget(features: user!.features!),
-          const SizedBox(height: 20,),
-          CardWidget(card: user!.card!),
-          const SizedBox(height: 20,),
-          SlideCardsWidget(news: user!.news!)
-        ],
-      ),
-    );
+        : Scaffold(
+            drawer: const Drawer(), //button hamburger top bar
+            appBar: AppBar(
+              backgroundColor: AppColors.red,
+              foregroundColor:
+                  Colors.white, //color white button hamburger top bar
+              title: Center(
+                  child: SvgPicture.asset(AppImages.logoSantander,
+                      height: 24, width: 24)),
+              actions: [
+                Container(
+                    margin: const EdgeInsets.only(right: 16),
+                    child: SvgPicture.asset(AppImages.notification, height: 24))
+              ],
+            ),
+            body: Column(
+              children: [
+                HeaderWidget(user: user!),
+                const SizedBox(
+                  height: 20,
+                ), // Separdor de component
+                FeaturesWidget(features: user!.features!),
+                const SizedBox(
+                  height: 20,
+                ),
+                ExpansionCardWidget(card: user!.card!),
+                const SizedBox(
+                  height: 20,
+                ),
+                SlideCardsWidget(news: user!.news!),
+              ],
+            ),
+          );
   }
 }
